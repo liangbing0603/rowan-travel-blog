@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust Adventures | Personal Travel Blog</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Wanderlust<span>Adventures</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover the World's Natural Wonders</h1>
+            <p class="subtitle">A personal travel blog for adventurous souls aged 18-35 exploring global destinations</p>
+            <a href="destinations.html" class="btn-primary">Explore Destinations</a>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- Featured Destinations -->
+    <section class="section featured-destinations">
+        <div class="container">
+            <h2 class="section-title">Featured Destinations</h2>
+            <p class="section-subtitle">Inspiring places from around the globe</p>
+            
+            <div class="destinations-grid">
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');">
+                        <div class="destination-label">Mountains</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Swiss Alps</h3>
+                        <p>Majestic peaks and pristine lakes in the heart of Europe. Perfect for hiking and photography.</p>
+                        <a href="#" class="btn-secondary">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');">
+                        <div class="destination-label">Beaches</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Bali, Indonesia</h3>
+                        <p>Tropical paradise with stunning beaches, vibrant culture, and spiritual retreats.</p>
+                        <a href="#" class="btn-secondary">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="destination-card">
+                    <div class="destination-image" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e');">
+                        <div class="destination-label">Forests</div>
+                    </div>
+                    <div class="destination-content">
+                        <h3>Amazon Rainforest</h3>
+                        <p>The world's largest tropical rainforest, home to incredible biodiversity and indigenous cultures.</p>
+                        <a href="#" class="btn-secondary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview -->
+    <section class="section about-preview">
+        <div class="container">
+            <div class="about-content">
+                <h2>About the Wanderer</h2>
+                <p>Hi, I'm Rowan! I've been traveling the world for the past 5 years, documenting my adventures and sharing tips for young travelers. My focus is on sustainable travel, authentic experiences, and connecting with nature.</p>
+                <p>This blog is dedicated to helping fellow adventurers aged 18-35 discover amazing destinations while traveling responsibly.</p>
+                <a href="about.html" class="btn-primary">My Story</a>
+            </div>
+            <div class="about-image">
+                <!-- Placeholder for about image -->
+                <div class="image-placeholder">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Posts -->
+    <section class="section latest-posts">
+        <div class="container">
+            <h2 class="section-title">Latest Blog Posts</h2>
+            <p class="section-subtitle">Travel tips, stories, and guides</p>
+            
+            <div class="posts-grid">
+                <article class="post-card">
+                    <div class="post-date">Mar 15, 2026</div>
+                    <h3>10 Essential Items for Backpacking Southeast Asia</h3>
+                    <p>A comprehensive packing list for budget travelers exploring Thailand, Vietnam, and Cambodia.</p>
+                    <a href="#" class="read-more">Read Article →</a>
+                </article>
+                
+                <article class="post-card">
+                    <div class="post-date">Mar 8, 2026</div>
+                    <h3>Sustainable Travel: How to Reduce Your Environmental Impact</h3>
+                    <p>Practical tips for eco-conscious travelers who want to explore the world responsibly.</p>
+                    <a href="#" class="read-more">Read Article →</a>
+                </article>
+                
+                <article class="post-card">
+                    <div class="post-date">Mar 1, 2026</div>
+                    <h3>Hidden Gems of Eastern Europe</h3>
+                    <p>Discover lesser-known destinations in Romania, Bulgaria, and Serbia that will surprise you.</p>
+                    <a href="#" class="read-more">Read Article →</a>
+                </article>
+            </div>
+            
+            <div class="text-center">
+                <a href="blog.html" class="btn-primary">View All Posts</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Join the Adventure Community</h2>
+            <p>Subscribe to receive monthly travel inspiration, exclusive tips, and destination guides.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Wanderlust Adventures</h3>
+                    <p>A personal travel blog sharing global adventures for young explorers aged 18-35.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone"></i> 19913662086</li>
+                        <li><i class="fas fa-envelope"></i> 19913662086@163.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Based in Shanghai, Traveling Worldwide</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Wanderlust Adventures. All rights reserved. | Designed with ❤️ for travelers</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
