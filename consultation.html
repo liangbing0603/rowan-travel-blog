@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅行咨询 - Rowan旅行咨询</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .consultation-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            margin-bottom: 60px;
+        }
+        
+        .consultation-container {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+        
+        .consultation-form {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--forest-dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-green);
+        }
+        
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-green), var(--forest-dark));
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.3);
+        }
+        
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            border-left: 5px solid #28a745;
+        }
+        
+        .contact-direct {
+            background: #f0f7ff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .contact-direct h3 {
+            color: var(--forest-dark);
+            margin-bottom: 20px;
+        }
+        
+        .contact-info-large {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #333;
+        }
+        
+        .whatsapp-link {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-link:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .consultation-hero {
+                padding: 60px 20px;
+            }
+            
+            .consultation-form {
+                padding: 25px;
+            }
+            
+            .contact-info-large {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Wanderlust Adventures</a>
+            <div class="nav-menu">
+                <a href="index.html">首页</a>
+                <a href="destinations.html">目的地</a>
+                <a href="blog.html">博客</a>
+                <a href="about.html">关于</a>
+                <a href="contact.html">联系</a>
+                <a href="consultation.html" class="nav-cta">旅行咨询</a>
+            </div>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 咨询页头 -->
+    <section class="consultation-hero">
+        <h1>个性化旅行咨询</h1>
+        <p>告诉我你的旅行想法，我会为你提供专业建议</p>
+    </section>
+
+    <!-- 咨询表单 -->
+    <div class="consultation-container">
+        <div class="consultation-form">
+            <h2 style="color: var(--forest-dark); margin-bottom: 30px;">📝 填写咨询信息</h2>
+            
+            <form id="consultationForm">
+                <div class="form-group">
+                    <label for="name">你的姓名 *</label>
+                    <input type="text" id="name" class="form-control" required placeholder="请输入你的姓名">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">邮箱地址 *</label>
+                    <input type="email" id="email" class="form-control" required placeholder="请输入你的邮箱">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">电话号码</label>
+                    <input type="tel" id="phone" class="form-control" placeholder="请输入你的电话（可选）">
+                </div>
+                
+                <div class="form-group">
+                    <label for="destination">想去的目的地 *</label>
+                    <input type="text" id="destination" class="form-control" required placeholder="例如：日本、欧洲、东南亚等">
+                </div>
+                
+                <div class="form-group">
+                    <label for="travelers">旅行人数</label>
+                    <select id="travelers" class="form-control">
+                        <option value="1">1人</option>
+                        <option value="2" selected>2人</option>
+                        <option value="3-4">3-4人</option>
+                        <option value="5+">5人以上</option>
+                        <option value="family">家庭旅行</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="budget">预算范围</label>
+                    <select id="budget" class="form-control">
+                        <option value="economy">经济型 ($500-1000)</option>
+                        <option value="comfort" selected>舒适型 ($1000-3000)</option>
+                        <option value="luxury">豪华型 ($3000+)</option>
+                        <option value="flexible">灵活预算</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dates">计划出行时间</label>
+                    <input type="text" id="dates" class="form-control" placeholder="例如：2024年夏季、圣诞节期间等">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">详细需求 *</label>
+                    <textarea id="message" class="form-control" rows="5" required placeholder="请详细描述你的旅行需求、兴趣点、特殊要求等..."></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> 提交咨询请求
+                </button>
+            </form>
+            
+            <div id="successMessage" class="success-message">
+                <h3><i class="fas fa-check-circle"></i> 咨询提交成功！</h3>
+                <p>感谢你的咨询！我会尽快通过邮箱联系你。</p>
+                <p>你也可以直接联系我：</p>
+                <p><strong>电话：19913662086</strong></p>
+                <p><strong>邮箱：19913662086@163.com</strong></p>
+            </div>
+        </div>
+        
+        <div class="contact-direct">
+            <h3>📞 直接联系我</h3>
+            <p>如果你希望立即沟通，可以直接：</p>
+            
+            <div class="contact-info-large">
+                <i class="fas fa-phone"></i> 19913662086
+            </div>
+            
+            <div class="contact-info-large">
+                <i class="fas fa-envelope"></i> 19913662086@163.com
+            </div>
+            
+            <p style="margin-top: 20px;">或者通过WhatsApp联系：</p>
+            <a href="https://wa.me/8619913662086?text=你好Rowan，我想咨询旅行相关事宜" class="whatsapp-link" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp联系
+            </a>
+            
+            <p style="margin-top: 20px; font-size: 14px; color: #666;">
+                通常回复时间：24小时内<br>
+                服务时间：周一至周日 9:00-21:00
+            </p>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Wanderlust Adventures</h3>
+                <p>分享全球旅行经验，提供专业旅行咨询</p>
+            </div>
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <a href="index.html">首页</a>
+                <a href="destinations.html">目的地</a>
+                <a href="blog.html">博客</a>
+                <a href="about.html">关于我</a>
+            </div>
+            <div class="footer-section">
+                <h4>联系方式</h4>
+                <p><i class="fas fa-phone"></i> 19913662086</p>
+                <p><i class="fas fa-envelope"></i> 19913662086@163.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> 上海，中国</p>
+            </div>
+            <div class="footer-section">
+                <h4>关注我</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Wanderlust Adventures. 保留所有权利。</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 咨询表单处理
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                destination: document.getElementById('destination').value,
+                travelers: document.getElementById('travelers').value,
+                budget: document.getElementById('budget').value,
+                dates: document.getElementById('dates').value,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toLocaleString('zh-CN')
+            };
+            
+            // 显示成功消息
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // 滚动到成功消息
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+            
+            // 清空表单
+            this.reset();
+            
+            // 保存到本地存储（仅限演示）
+            try {
+                let consultations = JSON.parse(localStorage.getItem('travelConsultations') || '[]');
+                consultations.push(formData);
+                localStorage.setItem('travelConsultations', JSON.stringify(consultations));
+                console.log('咨询已保存到本地存储');
+            } catch (error) {
+                console.log('本地存储失败，但表单已提交');
+            }
+            
+            // 3秒后可以再次提交
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 10000);
+        });
+        
+        // 页面加载时检查本地存储
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const consultations = JSON.parse(localStorage.getItem('travelConsultations') || '[]');
+                console.log(`本地存储中有 ${consultations.length} 条咨询记录`);
+            } catch (error) {
+                console.log('无法读取本地存储');
+            }
+        });
+    </script>
+</body>
+</html>
