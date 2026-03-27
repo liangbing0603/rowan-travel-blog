@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="article-title">Blog Article | Wanderlust Adventures</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .article-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1488646953014-85cb44e25828') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 120px 0 60px;
+            margin-top: 60px;
+        }
+        .article-header h1 {
+            color: white;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        .article-meta {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .article-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            line-height: 1.8;
+        }
+        .article-content p {
+            margin-bottom: 1.5rem;
+        }
+        .article-content h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .back-to-blog {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏（同其他页面） -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Wanderlust<span>Adventures</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <section class="article-header" id="article-header">
+        <div class="container">
+            <h1 id="article-title-main">Loading...</h1>
+            <div class="article-meta" id="article-meta"></div>
+        </div>
+    </section>
+
+    <div class="article-content" id="article-content">
+        <p>Loading article...</p>
+    </div>
+
+    <div class="back-to-blog">
+        <a href="blog.html" class="btn-primary">← Back to Blog</a>
+    </div>
+
+    <!-- 页脚（同其他页面） -->
+    <footer class="footer">...</footer>
+
+    <script src="script.js"></script>
+    <script src="article-data.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const articleId = urlParams.get('id');
+        if (articleId && articlesData[articleId]) {
+            const data = articlesData[articleId];
+            document.title = data.title + " | Wanderlust Adventures";
+            document.getElementById('article-title-main').textContent = data.title;
+            document.getElementById('article-meta').innerHTML = `${data.date} • ${data.readTime} • ${data.category}`;
+            // 可选：设置 header 背景图
+            if (data.image) {
+                document.getElementById('article-header').style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${data.image}')`;
+            }
+            // 渲染内容（支持简单 HTML）
+            document.getElementById('article-content').innerHTML = data.content;
+        } else {
+            document.getElementById('article-title-main').textContent = "Article Not Found";
+            document.getElementById('article-content').innerHTML = "<p>Sorry, the article you're looking for doesn't exist. <a href='blog.html'>Return to blog</a>.</p>";
+        }
+    </script>
+</body>
+</html>
